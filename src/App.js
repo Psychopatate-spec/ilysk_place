@@ -1,9 +1,12 @@
 import React from 'react';
+
 import './App.css';
+
 import Home from './components/Home.jsx';
 import Gallery from './components/Gallery.jsx';
 import Projects from './components/Projects.jsx';
 import Journal from './components/Journal.jsx';
+
 import { HashRouter, Routes, Route, Link } from 'react-router-dom';
 
 function App() {
