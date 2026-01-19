@@ -1,0 +1,7 @@
+.grid-container {
+  grid-template-columns: auto 1fr 1fr 1fr 1fr;
+}
+.grid-item {
+  padding: 30px 30px;
+  background-color: red;
+}
