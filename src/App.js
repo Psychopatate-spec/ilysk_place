@@ -37,6 +37,10 @@ function App() {
           <Route path="/journal" element={<Journal />} />
         </Routes>
       </HashRouter>
+
+      <footer>
+        
+      </footer>
     </div>
   );
 }
