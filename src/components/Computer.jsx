@@ -1,0 +1,12 @@
+import React from 'react';
+import './../App.css';
+
+function Computer() {
+  return (
+    <div className="Computer">
+      <p>01101010 01110101 01110011 01110100 00100000 01100001 01101110 00100000 01101111 01101100 01100100 00100000 01100011 01101111 01101101 01110000 01110101 01110100 01100101 01110010 00101110</p>
+    </div>
+  );
+}
+
+export default Computer;

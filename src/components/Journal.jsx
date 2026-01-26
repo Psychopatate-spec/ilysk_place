@@ -4,8 +4,7 @@ import './../App.css';
 function Journal() {
   return (
     <div className="Journal">
-      <h1>Journal</h1>
-      
+      <p>you thought you were smart huh ?</p>
     </div>
   );
 }
