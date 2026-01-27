@@ -11,7 +11,7 @@ function CloseButton() {
         position: "absolute",
         top: 8,
         right: 8,
-        width: 22,
+        width: 32,
         height: 22,
         display: "flex",
         alignItems: "center",
@@ -24,7 +24,7 @@ function CloseButton() {
         userSelect: "none",
       }}
     >
-      ✕
+      close
     </div>
   );
 }
