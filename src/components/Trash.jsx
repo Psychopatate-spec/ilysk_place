@@ -6,7 +6,7 @@ function Trash() {
   const [items, setItems] = useState(null);
 
   return (
-    <div className="Trash">
+    <div className="Trash" style={{position: "absolute", left: "50%", top:"50%", transform:"translate(-50%, -50%)"}}>
       <button onClick={() => {
         setItems(Math.floor(Math.random() * 9) + 1);
       }}>
