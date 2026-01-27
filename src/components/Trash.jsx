@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import CloseButton from './CloseButton';
 import './../App.css';
 
 function Trash() {
@@ -7,6 +8,7 @@ function Trash() {
 
   return (
     <div className="Trash" style={{position: "absolute", left: "50%", top:"50%", transform:"translate(-50%, -50%)"}}>
+      <CloseButton />
       <button onClick={() => {
         setItems(Math.floor(Math.random() * 9) + 1);
       }}>

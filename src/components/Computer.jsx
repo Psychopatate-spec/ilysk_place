@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import CloseButton from "./CloseButton";
 import "./../App.css";
 
 function Computer() {
@@ -77,6 +78,7 @@ function Computer() {
         overflow: "hidden",
       }}
     >
+      <CloseButton />
       <p style={{ color: "#555", fontSize: 12, padding: 8 }}>
         01101010 01110101 01110011 01110100 00100000 01100001 01101110 00100000
         01101111 01101100 01100100 00100000 01100011 01101111 01101101 01110000

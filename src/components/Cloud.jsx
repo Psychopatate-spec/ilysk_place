@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import CloseButton from './CloseButton';
 import './../App.css';
 
 function Cloud() {
@@ -105,6 +106,7 @@ function Cloud() {
 
   return (
     <div className="Cloud" style={{position: "absolute", left: "50%", top:"50%", transform:"translate(-50%, -50%)"}}>
+      <CloseButton />
       {thoughts_displayed.map((thought) => (
         <p key={thought.id} onMouseEnter={() => handleHover(thought.id)}>
           {thought.currentText}
