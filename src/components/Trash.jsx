@@ -25,7 +25,7 @@ function Trash() {
             <input id="submit" type="submit" onClick={() => {
               const passwordInput = document.getElementById('code').value;
               if (passwordInput === code) {
-                window.location.hash = '#/journal';
+                window.location.hash = '#/realjournal';
               } else {
                 alert('Wrong code');
               }
