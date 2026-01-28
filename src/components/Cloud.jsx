@@ -6,47 +6,47 @@ function Cloud() {
 
   const [thoughts_displayed, setThoughtsDisplayed] = useState([]);
 
-  const thoughts = [
-    {
-      id: 1,
-      text1: "I'm fine",
-      text2: "I'm not fine",
-      text3: "I'm meh"
-    },
-    {
-      id: 2,
-      text1: "I don't care",
-      text2: "I care",
-      text3: "I care too much"
-    },
-    {
-      id: 3,
-      text1: "I'm shaking",
-      text2: "I feel cold",
-      text3: "Why am I shaking?"
-    },
-    {
-      id: 4,
-      text1: "I should have",
-      text2: "I should stop",
-      text3: "I should sleep"
-    },
-    {
-      id: 5,
-      text1: "It's nothing",
-      text2: "It's not nothing",
-      text3: "It's everything"
-    },
-    {
-      id: 6,
-      text1: "I want to",
-      text2: "I don't want to",
-      text3: "I hate to"
-    }
-  ]
-
   // Show a new random thought every 5 seconds
   useEffect(() => {
+    const thoughts = [
+      {
+        id: 1,
+        text1: "I'm fine",
+        text2: "I'm not fine",
+        text3: "I'm meh"
+      },
+      {
+        id: 2,
+        text1: "I don't care",
+        text2: "I care",
+        text3: "I care too much"
+      },
+      {
+        id: 3,
+        text1: "I'm shaking",
+        text2: "I feel cold",
+        text3: "Why am I shaking?"
+      },
+      {
+        id: 4,
+        text1: "I should have",
+        text2: "I should stop",
+        text3: "I should sleep"
+      },
+      {
+        id: 5,
+        text1: "It's nothing",
+        text2: "It's not nothing",
+        text3: "It's everything"
+      },
+      {
+        id: 6,
+        text1: "I want to",
+        text2: "I don't want to",
+        text3: "I hate to"
+      }
+    ]
+
     const interval = setInterval(() => {
       const randomThought = thoughts[Math.floor(Math.random() * thoughts.length)];
       const newThought = {
@@ -70,8 +70,6 @@ function Cloud() {
   useEffect(() => {
     if (thoughts_displayed.length === 0) return;
 
-    const lastThought = thoughts_displayed[thoughts_displayed.length - 1];
-
     const removeTimeout = setTimeout(() => {
       setThoughtsDisplayed((prev) => prev.slice(1));
     }, 5000);
@@ -79,7 +77,7 @@ function Cloud() {
     return () => {
       clearTimeout(removeTimeout);
     };
-  }, [thoughts_displayed.length]);
+  }, [thoughts_displayed]);
 
   // Handle text change on hover
   const handleHover = (thoughtId) => {
@@ -105,13 +103,15 @@ function Cloud() {
   };
 
   return (
-    <div className="Cloud" style={{position: "absolute", left: "50%", top:"50%", transform:"translate(-50%, -50%)"}}>
+    <div className="Cloud">
       <CloseButton />
-      {thoughts_displayed.map((thought) => (
-        <p key={thought.id} onMouseEnter={() => handleHover(thought.id)}>
-          {thought.currentText}
-        </p>
-      ))}
+      <div style={{ color: "rgb(212, 212, 212)", backgroundColor: "rgb(32, 32, 32)", fontSize: 12, padding: 8, width: 200, height: 200, position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", userSelect: "none" }}>
+        {thoughts_displayed.map((thought) => (
+          <p key={thought.id} onMouseEnter={() => handleHover(thought.id)}>
+            {thought.currentText}
+          </p>
+        ))}
+      </div>
     </div>
   );
 }
