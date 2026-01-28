@@ -28,6 +28,7 @@ const ObjectComponent = forwardRef(({ x, y, label, lines, onSpeak, onDialogueEnd
         left: x,
         top: y,
         opacity: (isDisabled && !isActive) ? 0.6 : 1,
+        cursor: 'pointer',
         pointerEvents: (isDisabled && !isActive) ? 'none' : 'auto'
       }}
       onClick={speak}
