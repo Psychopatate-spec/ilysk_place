@@ -4,6 +4,7 @@ import './App.css';
 
 import Trash from './components/Trash.jsx';
 import Computer from './components/Computer.jsx';
+import RealJournal from './components/RealJournal.jsx';
 import Journal from './components/Journal.jsx';
 import Cloud from './components/Cloud.jsx';
 import Cardboardbox from './components/Cardboardbox.jsx';
@@ -179,6 +180,8 @@ function App() {
           <Route path="/computer" element={<Computer />} />
           <Route path="/cloud" element={<Cloud />} />
           <Route path="/cardboardbox" element={<Cardboardbox />} />
+
+          <Route path="/realjournal" element={<RealJournal />} />
 
           <Route path="/journal" element={<Journal />} />
         </Routes>
