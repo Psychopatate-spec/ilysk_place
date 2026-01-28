@@ -6,6 +6,7 @@ import Trash from './components/Trash.jsx';
 import Computer from './components/Computer.jsx';
 import Journal from './components/Journal.jsx';
 import Cloud from './components/Cloud.jsx';
+import Cardboardbox from './components/Cardboardbox.jsx';
 import DialogueBox from './components/DialogueBox.jsx';
 
 import ObjectComponent from './components/Object.jsx';
@@ -31,24 +32,28 @@ function App() {
   return (
     <div className="App">
       <HashRouter>
-        <h1>my room.</h1>
+        <h1 style={{position: "absolute", top: "10%", left: "50%", transform: "translate(-50%, -10%)"}}>Where am I ?</h1>
 
         <Link 
           to="/trash" 
-          style={{position: "absolute", left: "20%", top: "80%", transform: "translate(-20%, -80%)"}}
+          style={{position: "absolute", left: "20%", top: "80%", transform: "translate(-20%, -80%)", pointerEvents: isInteracting ? "none" : "auto", opacity: isInteracting ? 0.5 : 1}}
         >
           Trash
         </Link>
         <Link 
           to="/computer"
-          style={{position: "absolute", left: "70%", top: "40%", transform: "translate(-70%, -40%)"}}
+          style={{position: "absolute", left: "70%", top: "40%", transform: "translate(-70%, -40%)", pointerEvents: isInteracting ? "none" : "auto", opacity: isInteracting ? 0.5 : 1}}
         >
           Computer
         </Link>
         <Link 
           to="/cloud"
-          style={{position: "absolute", left: "30%", top:"30%", transform: "translate(-30%, -20%)"}}
+          style={{position: "absolute", left: "30%", top:"30%", transform: "translate(-30%, -20%)", pointerEvents: isInteracting ? "none" : "auto", opacity: isInteracting ? 0.5 : 1}}
           >Cloud</Link>
+        <Link 
+          to="/cardboardbox"
+          style={{position: "absolute", left: "40%", top:"70%", transform: "translate(-70%, -70%)", pointerEvents: isInteracting ? "none" : "auto", opacity: isInteracting ? 0.5 : 1}}
+          >Cardboard box</Link>
 
         {dialogue && <DialogueBox text={dialogue.text} onClick={handleDialogueClick} />}
 
@@ -147,7 +152,7 @@ function App() {
         />
         <ObjectComponent
           ref={mirrorRef}
-          x={1000}
+          x={900}
           y={400}
           label="Cracked mirror"
           lines={[
@@ -173,6 +178,7 @@ function App() {
           <Route path="/trash" element={<Trash />} />
           <Route path="/computer" element={<Computer />} />
           <Route path="/cloud" element={<Cloud />} />
+          <Route path="/cardboardbox" element={<Cardboardbox />} />
 
           <Route path="/journal" element={<Journal />} />
         </Routes>
